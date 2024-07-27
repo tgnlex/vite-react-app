@@ -1,8 +1,8 @@
-import Layout from './layout/layout.tsx';
+import Layout from './layout.tsx';
 
 const Home = () => {
   return (
-   <Layout title={"Welcome"}>
+   <Layout>
     <main id="welcome" className="welcome">
       <h1 className="heading">Welcome!</h1>
     </main>
@@ -10,4 +10,5 @@ const Home = () => {
   )
 }
 
-export default Wome;
+
+export default Home;

@@ -1,14 +1,17 @@
-import React form 'react'
-import Header from '@layout/header.tsx';
-import Navbar from '@layout/navbar.tsx';
-import Footer from '@layout/footer.tsx';
-
-const Layout = (children: React.ReactNode) => {
+import React from 'react';
+import Header from '../component/layout/header.tsx';
+import Navbar from '../component/layout/navbar.tsx';
+import Footer from '../component/layout/footer.tsx';
+interface LayoutProps  {
+  children: React.ReactChild[], 
+  title: string
+}
+const Layout = (props: LayoutProps) => {
   return (
     <>
-      <Header />
+      <Header/>
       <Navbar />
-      {children}
+      {props.children}
       <Footer />
     </>
   )

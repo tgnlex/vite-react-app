@@ -20,14 +20,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./src/"],
-      "@app/*": ["./src/app/*"]
+      "@/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
       "@lib/*": ["./src/lib/*"],
-      "@util": ["./src/utils/*"],
-      "@comp": ["./src/component*"],
-      "@style": ["./src/style/*"],
-      "@ui/": ["./src/ui/*"],
-      "@layout": ["./src/component/layout/*"]
+      "@util/*": ["./src/utils/*"],
+      "@comp/*": ["./src/component*"],
+      "@style/*": ["./src/style/*"],
+      "@ui/*": ["./src/component/ui/*"],
+      "@layout/*": ["./src/component/layout/*"]
     }
   },
   "include": ["src"],
