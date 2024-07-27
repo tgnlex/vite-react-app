@@ -1,11 +1,11 @@
-import {messages} from '../chat.tsx';
+import {useState, useRef} from 'react';
+import {messages, scroll} from '../chat.tsx';
 
 const SOCKET_TIMEOUT = 5000;  
 function MessageForm() {
-  const [value, setValue] = useState(" ");
+  const [message, setMessage] = useState(" ");
   const [isLoading, setIsLoading] = useState(false);
-
-  function sendMessage(event) {
+  const sendMessage = async (event) => {
     event.preventDefault();
     if (message.trim() === "") {
       alert("Enter valid message")
@@ -16,7 +16,8 @@ function MessageForm() {
     socket.timeout(SOCKET_TIMEOUT)
       .emit('chat_message', message, () => {
         setIsLoading(false);
-        console.info('Message sent!')
+        setMessage("");
+        scroll.current.scrollIntoView({ behavior: "smooth" });
     })
   }
   return (
