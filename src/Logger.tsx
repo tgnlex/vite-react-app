@@ -3,26 +3,33 @@ interface LogFn {
 }
 class Logger {
   log: LogFn
-  debug: LogFn
   info: LogFn
   warn: LogFn
   error: LogFn
 }
 class ConsoleLogger implements Logger {
-  log(message?: any, opts: any[]): void{
+  readonly log: LogFn
+  readonly info: LogFn
+  readomly warn: LogFn
+  readonly error: LogFn 
+  constructor() {
+    this.log = console.log.bind(console)
+    this.info = console.info.bind(console)
+    this.warn = console.warn.bind(console)
+    this.error = console.error.bind(console)
+  }
+  log: LogFn(message?: any, opts: any[]): void{
     console.log(message, ...opts)
   }
-  debug(message?: any, opts: any[]): void {
-    console.debug(message, ...opts)
-  }
-  info(message?: any, opts: any[]): void {
+   info: LogFn(message?: any, opts: any[]): void {
     console.info(meessage, ...opts)
   }
-  warn(message?: any, opts: any[]): void {
+  warn: LogFn(message?: any, opts: any[]): void {
     console.warn(message, ...opts)
   }
-  error(message?: any, opts: any[]): void {
+   error: LogFn(message?: any, opts: any[]): void {
     console.error(message, ...opts)
   }
+  
 
 }
