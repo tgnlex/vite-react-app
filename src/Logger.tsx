@@ -7,10 +7,12 @@ class Logger {
   warn: LogFn
   error: LogFn
 }
+type LogLevel = 'log' | 'info' | 'warn' | 'error';
+const NOOP: LogFn = (message?: any, opts: any[]): void => { return }
 class ConsoleLogger implements Logger {
   readonly log: LogFn
   readonly info: LogFn
-  readomly warn: LogFn
+  readonly warn: LogFn
   readonly error: LogFn 
   constructor() {
     this.log = console.log.bind(console)
