@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../component/layout/header.tsx';
-import Navbar from '../component/layout/navbar.tsx';
-import Footer from '../component/layout/footer.tsx';
+import Header from '@/ui/layout/header.tsx';
+import Navbar from '@/ui/layout/navbar.tsx';
+import Footer from '@/ui/layout/footer.tsx';
 interface LayoutProps  {
   children: React.ReactChild[], 
   title: string

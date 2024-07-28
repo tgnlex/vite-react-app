@@ -8,7 +8,7 @@ function Message(message: MessageModel) {
   return (
     <li key={message.id} className={`chat-bubble`}>
       <p className="message-text">
-        {message.text}>
+        {message.text}
       </p>
     </li>
   )
