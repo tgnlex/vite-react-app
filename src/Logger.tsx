@@ -8,14 +8,15 @@ class Logger {
   error: LogFn
 }
 type LogLevel = 'log' | 'info' | 'warn' | 'error';
-const NOOP: LogFn = (message?: any, opts: any[]): void => { return }
+const NOOP: LogFn = (message?: any, opts: any[]): void => {}
 class ConsoleLogger implements Logger {
   readonly log: LogFn
   readonly info: LogFn
   readonly warn: LogFn
   readonly error: LogFn 
-  constructor() {
-    this.log = console.log.bind(console)
+  constructor(opts?: {level: LogLevel}) {
+    const { level} = opts || {}
+this.log = console.log.bind(console)
     this.info = console.info.bind(console)
     this.warn = console.warn.bind(console)
     this.error = console.error.bind(console)
